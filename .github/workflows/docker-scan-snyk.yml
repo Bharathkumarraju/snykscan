@@ -13,8 +13,15 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME  }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build and push
+      - name: Build and push to dockerhub
         uses: docker/build-push-action@v4
         with:
           push: true
           tags: bharathkumarraju/bknodeapp:latest
+
+      - name: Run Snyk to check Docker image for vulnerabilities
+        uses: snyk/actions/docker@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          image: bharathkumarraju/bknodeapp:latest
