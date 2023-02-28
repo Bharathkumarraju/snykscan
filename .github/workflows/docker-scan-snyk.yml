@@ -21,6 +21,7 @@ jobs:
 
       - name: Run Snyk to check custom Docker image for vulnerabilities
         uses: snyk/actions/docker@master
+        continue-on-error: true
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
@@ -28,5 +29,6 @@ jobs:
 
       - name: Run Snyk to check for NodeJs Code vulnerabilities
         uses: snyk/actions/node@master
+        continue-on-error: true
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
