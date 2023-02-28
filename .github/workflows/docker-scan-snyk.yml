@@ -1,4 +1,4 @@
-name: docker-scan-synk
+name: docker-scan-snyk
 on:
   push:
     branches:
@@ -19,9 +19,14 @@ jobs:
           push: true
           tags: bharathkumarraju/bknodeapp:latest
 
-      - name: Run Snyk to check Docker image for vulnerabilities
+      - name: Run Snyk to check custom Docker image for vulnerabilities
         uses: snyk/actions/docker@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
           image: bharathkumarraju/bknodeapp:latest
+
+      - name: Run Snyk to check for NodeJs Code vulnerabilities
+        uses: snyk/actions/node@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
