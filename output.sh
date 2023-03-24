@@ -7,7 +7,9 @@ adbb4bc8f7d0d983d455ad35a14a3cc79ab58a16fd05f406ff88c2bd7cb9fe1e
 bharathdasaraju@MacBook-Pro Demo1_volumes_dockerfile (main) $ docker ps
 CONTAINER ID        IMAGE                                        COMMAND                  CREATED             STATUS              PORTS                  NAMES
 adbb4bc8f7d0        bharathkumarraju/bkr-feedback-node:volumes   "docker-entrypoint.s…"   9 seconds ago       Up 8 seconds        0.0.0.0:3000->80/tcp   raju-feedback-app
-bharathdasaraju@MacBook-Pro Demo1_volumes_dockerfile (main) $ 
+bharathdasaraju@MacBook-Pro Demo1_volumes_dockerfile (main) $
+
+hello test
 
 
 
